@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio 1 | Refleksi Awal Mahasiswa</title>
+    <meta name="description" content="E-Portfolio 1 sebagai refleksi awal fondasi dasar karakter mahasiswa calon guru profesional.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons (Modern Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+    
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+                <img src="assets/logo_ust.png" alt="Logo UST" style="height: 42px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
+                <span style="color: #ffffff; font-weight: 700; font-size: 1.15rem; letter-spacing: 0.5px; line-height: 1.2;">Universitas Sarjanawiyata Tamansiswa</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="ph ph-list"></i>
+            </button>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="../index.html" class="nav-link" style="color: #cbd5e1;"><i class="ph ph-arrow-left"></i> Kembali</a>
+                <a href="#home" class="nav-link active">Beranda</a>
+                <a href="#profil" class="nav-link">Profil</a>
+                <a href="#dokumentasi" class="nav-link">Dokumentasi</a>
+                <a href="#artefak" class="nav-link">Artefak</a>
+                <a href="#analisis" class="nav-link">Analisis Artefak</a>
+                <a href="#model-guru" class="nav-link">Model Guru</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero / Profil Singkat -->
+        <section id="home" class="hero">
+            <div class="spark-container" id="spark-container"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Fajar Afrianto</h1>
+                    <h2 class="hero-subtitle" style="font-family: 'Fira Code', monospace; letter-spacing: 2px; color: var(--primary-neon); font-size: 1.15rem; margin-bottom: 1.5rem;">
+                        NIM. 20250843725
+                    </h2>
+                    <p class="hero-description">
+                        Portfolio ini merupakan refleksi awal sebagai fondasi dasar karakter untuk menjadi seorang pendidik yang profesional, berdedikasi, dan inspiratif.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#profil" class="btn btn-primary">Mulai Membaca <i class="ph ph-arrow-down"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <img src="assets/fajar_cropped.png" alt="Foto Fajar Afrianto" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Profil Mahasiswa Lengkap -->
+        <section id="profil" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Profil Mahasiswa</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="about-content" style="max-width: 1200px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin: 0 auto; text-align: left;">
+                    <!-- Kartu 1: Latar Belakang -->
+                    <div class="about-text glass-card" style="padding: 2.5rem; text-align: left; display: flex; flex-direction: column;">
+                        <h3 style="color: var(--primary-neon); margin-bottom: 1.5rem; font-family: var(--font-cyber);"><i class="ph ph-factory"></i> Latar Belakang</h3>
+                        <p style="margin-bottom: 1rem; line-height: 1.7;">Halo, perkenalkan nama saya <strong>Fajar Afrianto</strong>. Saya berasal dari <strong>Bantul, Daerah Istimewa Yogyakarta</strong>.</p>
+                        <p style="line-height: 1.7; color: var(--text-muted);">Daerah Bantul terkenal dengan keunikan budayanya, terutama <strong>budaya gotong royong yang masih kental dan kehidupan masyarakat yang sederhana namun penuh kebersamaan</strong>. Nilai-nilai gotong royong dan kesederhanaan ini membentuk karakter saya untuk selalu menghargai keberagaman, kerja sama, dan pentingnya kontribusi positif bagi komunitas sekitar.</p>
+                    </div>
+
+                    <!-- Kartu 2: Motivasi & Inspirasi -->
+                    <div class="about-text glass-card" style="padding: 2.5rem; text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3 style="color: var(--secondary-neon); margin-bottom: 1.5rem; font-family: var(--font-cyber);"><i class="ph ph-lightning"></i> Motivasi & Inspirasi</h3>
+                            <p style="margin-bottom: 1rem; line-height: 1.7;">Inspirasi terbesar saya untuk menjadi guru profesional berawal dari pengalaman berharga bertemu dengan guru yang tidak hanya mentransfer ilmu, tetapi juga memberikan teladan hidup yang luar biasa.</p>
+                            <p style="margin-bottom: 1.5rem; line-height: 1.7; color: var(--text-muted);">Pendidikan adalah fondasi utama masa depan bangsa. Tujuan saya adalah menjadi pendidik sekaligus fasilitator yang mampu menyalakan potensi terbaik siswa dan membimbing mereka dengan ketulusan.</p>
+                        </div>
+                        <div class="quote-container" style="padding: 1.25rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.03); border-radius: 0 8px 8px 0;">
+                            <p style="font-size: 0.95rem; font-style: italic; color: var(--text-main); margin-bottom: 0; line-height: 1.5;">"Pendidikan bukan tentang mengisi wadah kosong, melainkan menyalakan api keingintahuan."</p>
+                        </div>
+                    </div>
+
+                    <!-- Kartu 3: Riwayat Hidup -->
+                    <div class="about-text glass-card" style="padding: 2.5rem; text-align: left; display: flex; flex-direction: column;">
+                        <h3 style="color: var(--primary-neon); margin-bottom: 1.5rem; font-family: var(--font-cyber);"><i class="ph ph-user"></i> Riwayat Hidup</h3>
+                        
+                        <!-- Pendidikan -->
+                        <h4 style="color: var(--text-main); font-size: 1.1rem; margin-top: 0.5rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;"><i class="ph ph-graduation-cap"></i> Pendidikan</h4>
+                        <ul style="list-style: none; padding-left: 0; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0.75rem; position: relative; padding-left: 1.25rem;">
+                                <span style="position: absolute; left: 0; color: var(--primary-neon);">•</span>
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">PPG Prajabatan</strong><br>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">UST Yogyakarta (Sekarang)</span>
+                            </li>
+                            <li style="margin-bottom: 0; position: relative; padding-left: 1.25rem;">
+                                <span style="position: absolute; left: 0; color: var(--primary-neon);">•</span>
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">S1 Pendidikan Teknik Mesin</strong><br>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">UNY (Angkatan 2018)</span>
+                            </li>
+                        </ul>
+
+                        <!-- Pengalaman Kerja -->
+                        <h4 style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;"><i class="ph ph-briefcase"></i> Pengalaman Kerja</h4>
+                        <ul style="list-style: none; padding-left: 0; margin-bottom: 1.5rem;">
+                            <li style="margin-bottom: 0; position: relative; padding-left: 1.25rem;">
+                                <span style="position: absolute; left: 0; color: var(--secondary-neon);">•</span>
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Instruktur Pengelasan</strong><br>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Lembaga Pelatihan Kerja (LPK)</span>
+                            </li>
+                        </ul>
+
+                        <!-- Prestasi -->
+                        <h4 style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;"><i class="ph ph-trophy"></i> Prestasi</h4>
+                        <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
+                            <li style="margin-bottom: 0.75rem; position: relative; padding-left: 1.25rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent);">•</span>
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Juara 3 Welding UGM 2016</strong>
+                            </li>
+                            <li style="margin-bottom: 0.75rem; position: relative; padding-left: 1.25rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent);">•</span>
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Juara 1 LKS DIY 2017</strong><br>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Prototype Modeling</span>
+                            </li>
+                            <li style="margin-bottom: 0; position: relative; padding-left: 1.25rem;">
+                                <span style="position: absolute; left: 0; color: var(--accent);">•</span>
+                                <strong style="color: var(--text-main); font-size: 0.95rem;">Juara 1 Welding UNS</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dokumentasi Kegiatan Pembelajaran -->
+        <section id="dokumentasi" class="section bg-secondary">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Dokumentasi</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <!-- Photo Gallery Wrapper with Slide Controls -->
+                <div class="doc-gallery-wrapper">
+                    <button class="slide-btn prev-btn" aria-label="Slide Left">
+                        <i class="ph ph-caret-left"></i>
+                    </button>
+                    
+                    <div class="doc-gallery">
+                        <!-- Photo 1 -->
+                        <div class="doc-card glass-card">
+                            <div class="doc-img-wrapper">
+                                <img src="assets/dok_1.jpeg" alt="Dokumentasi Pembelajaran 1" class="doc-img" loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Photo 2 -->
+                        <div class="doc-card glass-card">
+                            <div class="doc-img-wrapper">
+                                <img src="assets/dok_2.jpeg" alt="Dokumentasi Pembelajaran 2" class="doc-img" loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Photo 3 -->
+                        <div class="doc-card glass-card">
+                            <div class="doc-img-wrapper">
+                                <img src="assets/dok_3.jpeg" alt="Dokumentasi Pembelajaran 3" class="doc-img" loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Photo 4 -->
+                        <div class="doc-card glass-card">
+                            <div class="doc-img-wrapper">
+                                <img src="assets/dok_4.jpeg" alt="Dokumentasi Pembelajaran 4" class="doc-img" loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Photo 5 -->
+                        <div class="doc-card glass-card">
+                            <div class="doc-img-wrapper">
+                                <img src="assets/dok_5.jpeg" alt="Dokumentasi Pembelajaran 5" class="doc-img" loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Photo 6 -->
+                        <div class="doc-card glass-card">
+                            <div class="doc-img-wrapper">
+                                <img src="assets/dok_6.jpeg" alt="Dokumentasi Pembelajaran 6" class="doc-img" loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Photo 7 -->
+                        <div class="doc-card glass-card">
+                            <div class="doc-img-wrapper">
+                                <img src="assets/dok_7.jpeg" alt="Dokumentasi Pembelajaran 7" class="doc-img" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="slide-btn next-btn" aria-label="Slide Right">
+                        <i class="ph ph-caret-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artefak Pembelajaran -->
+        <section id="artefak" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Kumpulan Artefak</h2>
+                    <div class="section-line"></div>
+                    <p style="margin-top: 1.5rem; color: var(--text-muted); max-width: 700px; margin-left: auto; margin-right: auto;">Kumpulan dokumen dan hasil karya sebagai bukti pelaksanaan pembelajaran.</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- RPP (Rencana Pelaksanaan Pembelajaran) -->
+                    <article class="project-card glass-card" style="padding: 2rem;">
+                        <div class="project-info" style="padding: 0;">
+                            <i class="ph ph-file-pdf" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                            <h3 class="project-title">RPP (Rencana Pelaksanaan Pembelajaran)</h3>
+                            <p class="project-desc">Skenario pembelajaran Pemesinan Bubut terstruktur yang dibagi menjadi 3 siklus pelaksanaan:</p>
+                            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem;">
+                                <a href="javascript:void(0)" onclick="openPdfPreview('documents/RPP%20Pemesinan%20Bubut%20Siklus%201.pdf', 'RPP Siklus 1 (Bubut)')" class="btn btn-outline btn-sm" style="width: 100%; text-align: left; display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 1rem;">
+                                    <span><i class="ph ph-file-pdf" style="margin-right: 0.5rem; font-size: 1.1rem; vertical-align: middle;"></i> Siklus 1 (Bubut)</span>
+                                    <i class="ph ph-eye" style="font-size: 1rem;"></i>
+                                </a>
+                                <a href="javascript:void(0)" onclick="openPdfPreview('documents/RPP%20Pemesinan%20Bubut%20Siklus%202.pdf', 'RPP Siklus 2 (Bubut)')" class="btn btn-outline btn-sm" style="width: 100%; text-align: left; display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 1rem;">
+                                    <span><i class="ph ph-file-pdf" style="margin-right: 0.5rem; font-size: 1.1rem; vertical-align: middle;"></i> Siklus 2 (Bubut)</span>
+                                    <i class="ph ph-eye" style="font-size: 1rem;"></i>
+                                </a>
+                                <a href="javascript:void(0)" onclick="openPdfPreview('documents/RPP%20Pemesinan%20Bubut%20Siklus%203.pdf', 'RPP Siklus 3 (Bubut)')" class="btn btn-outline btn-sm" style="width: 100%; text-align: left; display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 1rem;">
+                                    <span><i class="ph ph-file-pdf" style="margin-right: 0.5rem; font-size: 1.1rem; vertical-align: middle;"></i> Siklus 3 (Bubut)</span>
+                                    <i class="ph ph-eye" style="font-size: 1rem;"></i>
+                                </a>
+                            </div>
+                
+                        </div>
+
+                    </article>
+
+                    <!-- Artefak 2 -->
+                    <article class="project-card glass-card" style="padding: 2rem;">
+                        <div class="project-info" style="padding: 0;">
+                            <i class="ph ph-video-camera" style="font-size: 3.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                            <h3 class="project-title">Video Mengajar</h3>
+                            <p class="project-desc">Rekaman visual praktik mengajar langsung yang menampilkan dinamika interaksi, pengelolaan kelas, dan penguasaan materi.</p>
+                            <a href="https://youtu.be/nah7lwu4MeU" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top: 1.5rem; width: fit-content;"><i class="ph ph-youtube-logo" style="color: #ef4444; font-size: 1.2rem; vertical-align: middle; margin-right: 0.3rem;"></i> Tonton Video Mengajar</a>
+
+                        </div>
+                    </article>
+
+                    <!-- Artefak 3 -->
+                    <article class="project-card glass-card" style="padding: 2rem;">
+                        <div class="project-info" style="padding: 0;">
+                            <i class="ph ph-notebook" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                            <h3 class="project-title">Bahan Ajar</h3>
+                            <p class="project-desc">Materi pembelajaran komprehensif yang disusun untuk mendukung pemahaman teori dan praktik kejuruan siswa.</p>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/Bahan%20Ajar%20Teknik%20Pemesinan%20Bubut.pdf', 'Bahan Ajar Teknik Pemesinan Bubut')" class="btn btn-outline btn-sm" style="margin-top: 1.5rem; width: fit-content;"><i class="ph ph-eye"></i> Lihat Dokumen</a>
+
+</div>
+                    </article>
+
+                    <!-- Artefak 4 -->
+                    <article class="project-card glass-card" style="padding: 2rem;">
+                        <div class="project-info" style="padding: 0;">
+                            <i class="ph ph-images" style="font-size: 3.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                            <h3 class="project-title">Media Ajar</h3>
+                            <p class="project-desc">Alat bantu visual, digital, atau fisik yang mempermudah demonstrasi dan pemahaman siswa terhadap materi kompleks.</p>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/Jenis-Jenis Pahat Bubut dan Alat Bantu.pdf', 'Jenis-Jenis Pahat Bubut dan Alat Bantu')" class="btn btn-outline btn-sm" style="margin-top: 1.5rem; width: fit-content;"><i class="ph ph-eye"></i> Jenis‑Jenis Pahat Bubut dan Alat Bantu</a>
+<a href="javascript:void(0)" onclick="openPdfPreview('documents/Parameter Pemotongan.pdf', 'Parameter Pemotongan')" class="btn btn-outline btn-sm" style="margin-top: 0.5rem; width: fit-content;"><i class="ph ph-eye"></i> Parameter Pemotongan</a>
+<a href="javascript:void(0)" onclick="openPdfPreview('documents/Pengeboran dan Bubut Dalam.pdf', 'Pengeboran dan Bubut Dalam')" class="btn btn-outline btn-sm" style="margin-top: 0.5rem; width: fit-content;"><i class="ph ph-eye"></i> Pengeboran dan Bubut Dalam</a>
+<a href="javascript:void(0)" onclick="openPdfPreview('documents/Pengenalan Mesin Bubut &amp; K3.pdf', 'Pengenalan Mesin Bubut &amp; K3')" class="btn btn-outline btn-sm" style="margin-top: 0.5rem; width: fit-content;"><i class="ph ph-eye"></i> Pengenalan Mesin Bubut &amp; K3</a>
+                        </div>
+
+                    </article>
+
+                    <!-- Artefak 5 -->
+                    <article class="project-card glass-card" style="padding: 2rem;">
+                        <div class="project-info" style="padding: 0;">
+                            <i class="ph ph-clipboard-text" style="font-size: 3.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                            <h3 class="project-title">LKM (Lembar Kerja Murid)</h3>
+                            <p class="project-desc">Lembar panduan kerja terstruktur Pemesinan Bubut yang dibagi menjadi 3 siklus pelaksanaan:</p>
+                            <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; text-align: left;">
+                                <!-- Siklus 1 Group -->
+                                <div style="background: rgba(255, 255, 255, 0.02); padding: 0.75rem 1rem; border-radius: 6px; border: 1px solid var(--border-color);">
+                                    <div style="font-weight: 600; color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+                                        <i class="ph ph-folder-open" style="color: var(--primary-neon); font-size: 1.25rem;"></i> Siklus 1
+                                    </div>
+                                    <div style="display: flex; flex-direction: column; gap: 0.5rem; padding-left: 0.5rem;">
+                                        <a href="javascript:void(0)" onclick="openPdfPreview('documents/LKM%201.pdf', 'LKM 1')" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.01); cursor:pointer;" onmouseover="this.style.color='var(--primary-neon)'; this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.color='var(--text-muted)'; this.style.background='rgba(255,255,255,0.01)'">
+                                            <span><i class="ph ph-file-pdf" style="color: var(--accent); margin-right: 0.3rem;"></i> LKM 1</span>
+                                            <i class="ph ph-eye" style="font-size: 0.8rem;"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" onclick="openPdfPreview('documents/LKM%202.pdf', 'LKM 2')" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.01); cursor:pointer;" onmouseover="this.style.color='var(--primary-neon)'; this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.color='var(--text-muted)'; this.style.background='rgba(255,255,255,0.01)'">
+                                            <span><i class="ph ph-file-pdf" style="color: var(--accent); margin-right: 0.3rem;"></i> LKM 2</span>
+                                            <i class="ph ph-eye" style="font-size: 0.8rem;"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" onclick="openPdfPreview('documents/LKM%203.pdf', 'LKM 3')" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.01); cursor:pointer;" onmouseover="this.style.color='var(--primary-neon)'; this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.color='var(--text-muted)'; this.style.background='rgba(255,255,255,0.01)'">
+                                            <span><i class="ph ph-file-pdf" style="color: var(--accent); margin-right: 0.3rem;"></i> LKM 3</span>
+                                            <i class="ph ph-eye" style="font-size: 0.8rem;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Siklus 2 Group -->
+                    <div style="background: rgba(255, 255, 255, 0.02); padding: 0.75rem 1rem; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <div style="font-weight: 600; color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="ph ph-folder-open" style="color: var(--primary-neon); font-size: 1.25rem;"></i> Siklus 2
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; padding-left: 0.5rem;">
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/LKM%204.pdf', 'LKM 4')" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.01); cursor:pointer;" onmouseover="this.style.color='var(--primary-neon)'; this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.color='var(--text-muted)'; this.style.background='rgba(255,255,255,0.01)'">
+                                <span><i class="ph ph-file-pdf" style="color: var(--accent); margin-right: 0.3rem;"></i> LKM 4</span>
+                                <i class="ph ph-eye" style="font-size: 0.8rem;"></i>
+                            </a>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/LKM%205.pdf', 'LKM 5')" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.01); cursor:pointer;" onmouseover="this.style.color='var(--primary-neon)'; this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.color='var(--text-muted)'; this.style.background='rgba(255,255,255,0.01)'">
+                                <span><i class="ph ph-file-pdf" style="color: var(--accent); margin-right: 0.3rem;"></i> LKM 5</span>
+                                <i class="ph ph-eye" style="font-size: 0.8rem;"></i>
+                            </a>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/LKM%206.pdf', 'LKM 6')" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.01); cursor:pointer;" onmouseover="this.style.color='var(--primary-neon)'; this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.color='var(--text-muted)'; this.style.background='rgba(255,255,255,0.01)'">
+                                <span><i class="ph ph-file-pdf" style="color: var(--accent); margin-right: 0.3rem;"></i> LKM 6</span>
+                                <i class="ph ph-eye" style="font-size: 0.8rem;"></i>
+                            </a>
+                        </div>
+                    </div>
+
+<!-- Siklus 3 Group -->
+                    <div style="background: rgba(255, 255, 255, 0.02); padding: 0.75rem 1rem; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <div style="font-weight: 600; color: var(--text-main); font-size: 0.9rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="ph ph-folder-open" style="color: var(--primary-neon); font-size: 1.25rem;"></i> Siklus 3
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; padding-left: 0.5rem;">
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/LKM%207.pdf', 'LKM 7')" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.01); cursor:pointer;" onmouseover="this.style.color='var(--primary-neon)'; this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.color='var(--text-muted)'; this.style.background='rgba(255,255,255,0.01)'"><span><i class="ph ph-file-pdf" style="color: var(--accent); margin-right: 0.3rem;"></i> LKM 7</span><i class="ph ph-eye" style="font-size: 0.8rem;"></i></a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScCsHWtR5cEx8jP6Ig3woL7ThGWvCguSztTvJSefd_30vXJjw/viewform?usp=sharing&ouid=117593595133287069303" target="_blank" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.01);" onmouseover="this.style.color='var(--primary-neon)'; this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.color='var(--text-muted)'; this.style.background='rgba(255,255,255,0.01)'"><span><i class="ph ph-link" style="color: var(--accent); margin-right: 0.3rem;"></i> Form LKM 8</span><i class="ph ph-arrow-square-out" style="font-size: 0.8rem;"></i></a>
+                        </div>
+                    </div>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <!-- Artefak 6 -->
+                    <article class="project-card glass-card" style="padding: 2rem;">
+                        <div class="project-info" style="padding: 0;">
+                            <i class="ph ph-list-checks" style="font-size: 3.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                            <h3 class="project-title">Lembar Penilaian</h3>
+                            <p class="project-desc">Instrumen evaluasi dan rubrik objektif untuk mengukur kompetensi praktik dan pencapaian target pembelajaran.</p>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/lembar penilaian LKM 1.pdf', 'Lembar Penilaian 1')" class="btn btn-outline btn-sm" style="margin-top: 1.5rem; width: fit-content;"><i class="ph ph-eye"></i> Lembar Penilaian 1</a>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/lembar penilaian LKM 2.pdf', 'Lembar Penilaian 2')" class="btn btn-outline btn-sm" style="margin-top: 0.5rem; width: fit-content;"><i class="ph ph-eye"></i> Lembar Penilaian 2</a>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/lembar penilaian LKM 3.pdf', 'Lembar Penilaian 3')" class="btn btn-outline btn-sm" style="margin-top: 0.5rem; width: fit-content;"><i class="ph ph-eye"></i> Lembar Penilaian 3</a>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/lembar penilaian LKM 4.pdf', 'Lembar Penilaian 4')" class="btn btn-outline btn-sm" style="margin-top: 0.5rem; width: fit-content;"><i class="ph ph-eye"></i> Lembar Penilaian 4</a>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/lembar penilaian LKM 5.pdf', 'Lembar Penilaian 5')" class="btn btn-outline btn-sm" style="margin-top: 0.5rem; width: fit-content;"><i class="ph ph-eye"></i> Lembar Penilaian 5</a>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/lembar penilaian LKM 6.pdf', 'Lembar Penilaian 6')" class="btn btn-outline btn-sm" style="margin-top: 0.5rem; width: fit-content;"><i class="ph ph-eye"></i> Lembar Penilaian 6</a>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/lembar penilaian LKM 7.pdf', 'Lembar Penilaian 7')" class="btn btn-outline btn-sm" style="margin-top: 0.5rem; width: fit-content;"><i class="ph ph-eye"></i> Lembar Penilaian 7</a>
+                            <a href="javascript:void(0)" onclick="openPdfPreview('documents/lembar penilaian LKM 8.pdf', 'Lembar Penilaian 8')" class="btn btn-outline btn-sm" style="margin-top: 0.5rem; width: fit-content;"><i class="ph ph-eye"></i> Lembar Penilaian 8</a>
+
+</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analisis Artefak Produk Pembelajaran -->
+        <section id="analisis" class="section bg-secondary">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Analisis Artefak Pembelajaran</h2>
+                    <div class="section-line"></div>
+                    <p style="margin-top: 1.5rem; color: var(--text-muted); max-width: 700px; margin-left: auto; margin-right: auto;">Refleksi mendalam terhadap rancangan dan perangkat pembelajaran yang telah disusun.</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Kendala -->
+                    <article class="project-card glass-card analisis-card" style="padding: 2rem; cursor: pointer;" onclick="openAnalisisModal('kendala')">
+                        <div class="project-info" style="padding: 0;">
+                            <i class="ph ph-warning-circle" style="font-size: 3.5rem; color: #f59e0b; margin-bottom: 1rem;"></i>
+                            <h3 class="project-title">Kendala Penyusunan</h3>
+                            <p class="project-desc">Tantangan yang dihadapi dalam menyusun RPP berdasarkan kondisi nyata di lapangan.</p>
+                            <span class="btn btn-outline btn-sm" style="margin-top: 1.5rem; width: fit-content; pointer-events: none;"><i class="ph ph-eye"></i> Baca Selengkapnya</span>
+                        </div>
+                    </article>
+
+                    <!-- Teori Pedagogi -->
+                    <article class="project-card glass-card analisis-card" style="padding: 2rem; cursor: pointer;" onclick="openAnalisisModal('teori')">
+                        <div class="project-info" style="padding: 0;">
+                            <i class="ph ph-gear" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                            <h3 class="project-title">Teori/Konsep Pedagogi</h3>
+                            <p class="project-desc">Konsep dan pendekatan pembelajaran yang digunakan dalam RPP.</p>
+                            <span class="btn btn-outline btn-sm" style="margin-top: 1.5rem; width: fit-content; pointer-events: none;"><i class="ph ph-eye"></i> Baca Selengkapnya</span>
+                        </div>
+                    </article>
+
+                    <!-- Faktor Keberhasilan -->
+                    <article class="project-card glass-card analisis-card" style="padding: 2rem; cursor: pointer;" onclick="openAnalisisModal('faktor')">
+                        <div class="project-info" style="padding: 0;">
+                            <i class="ph ph-target" style="font-size: 3.5rem; color: #10b981; margin-bottom: 1rem;"></i>
+                            <h3 class="project-title">Faktor Keberhasilan</h3>
+                            <p class="project-desc">Strategi agar pembelajaran tetap efektif meskipun fasilitas terbatas.</p>
+                            <span class="btn btn-outline btn-sm" style="margin-top: 1.5rem; width: fit-content; pointer-events: none;"><i class="ph ph-eye"></i> Baca Selengkapnya</span>
+                        </div>
+                    </article>
+
+                    <!-- Adaptasi Situasi Kelas -->
+                    <article class="project-card glass-card analisis-card" style="padding: 2rem; cursor: pointer;" onclick="openAnalisisModal('adaptasi')">
+                        <div class="project-info" style="padding: 0;">
+                            <i class="ph ph-arrows-clockwise" style="font-size: 3.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                            <h3 class="project-title">Adaptasi Situasi Kelas</h3>
+                            <p class="project-desc">Penyesuaian yang diperlukan jika kondisi kelas berbeda.</p>
+                            <span class="btn btn-outline btn-sm" style="margin-top: 1.5rem; width: fit-content; pointer-events: none;"><i class="ph ph-eye"></i> Baca Selengkapnya</span>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Analisis Detail Modal -->
+                <div class="analisis-modal-overlay" id="analisis-modal" style="display: none;" onclick="if(event.target===this) closeAnalisisModal()">
+                    <div class="analisis-modal-content glass-card">
+                        <button class="analisis-modal-close" id="analisis-modal-close" aria-label="Close" onclick="closeAnalisisModal()">
+                            <i class="ph ph-x"></i>
+                        </button>
+                        <div class="analisis-modal-header">
+                            <i id="analisis-modal-icon" class="ph ph-warning-circle" style="font-size: 2.5rem;"></i>
+                            <h3 id="analisis-modal-title">Judul</h3>
+                        </div>
+                        <div class="analisis-modal-body" id="analisis-modal-body">
+                            <!-- Content injected by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lampiran 7 & 8 -->
+                <div class="lampiran-container" style="margin-top: 4rem;">
+                    <div class="glass-card" style="padding: 2.5rem;">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--text-main); text-align: center;">Instrumen Penilaian</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                            <div style="background: rgba(15, 23, 42, 0.5); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <h4 style="color: var(--primary); margin-bottom: 1rem;"><i class="ph ph-ruler"></i> Lampiran 7: Penilaian Perangkat</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">Instrumen penilaian ini mencakup evaluasi kelengkapan, kesesuaian tujuan, dan kualitas media ajar yang telah disusun.</p>
+                                <a href="javascript:void(0)" onclick="openPdfPreview('documents/Lampiran%207%20PPL%20Terbimbing%20PPG%20UST_SMK%20Muh%203%20Yk_FAJAR%20AFRIANTO.pdf', 'Lampiran 7: Penilaian Perangkat')" class="btn btn-outline btn-sm" style="margin-top: 1rem; width: 100%;"><i class="ph ph-eye"></i> Lihat Lampiran 7</a>
+                            </div>
+                            <div style="background: rgba(15, 23, 42, 0.5); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                                <h4 style="color: var(--secondary); margin-bottom: 1rem;"><i class="ph ph-presentation-chart"></i> Lampiran 8: Praktik Mengajar</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">Instrumen penilaian ini mencakup evaluasi kelengkapan, kesesuaian tujuan, dan kualitas media ajar yang telah disusun.</p>
+                                <a href="javascript:void(0)" onclick="openPdfPreview('documents/Lampiran%208PPL%20Terbimbing%20PPG%20UST_SMK%20Muh%203%20Yk_FAJAR%20AFRIANTO.pdf', 'Lampiran 8: Praktik Mengajar')" class="btn btn-outline btn-sm" style="margin-top: 1rem; width: 100%;"><i class="ph ph-eye"></i> Lihat Lampiran 8</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Model Guru yang Dituju -->
+        <section id="model-guru" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Model Guru yang Dituju</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+                    <!-- Card 1: Misi Guru -->
+                    <div class="skill-card glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid #ef4444;">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                <i class="ph ph-target skill-icon" style="color: #ef4444; font-size: 3rem; margin-bottom: 0;"></i>
+                                <h3 style="font-family: var(--font-cyber); font-size: 1.35rem; margin: 0; line-height: 1.3;">Misi Profesional Guru</h3>
+                            </div>
+                            <p style="font-size: 1.05rem; font-style: italic; line-height: 1.7; color: var(--text-main); margin-bottom: 1.5rem; border-left: 3px solid #ef4444; padding-left: 1rem; background: rgba(239, 68, 68, 0.03); border-radius: 0 6px 6px 0; padding-top: 0.5rem; padding-bottom: 0.5rem;">
+                                "Menciptakan lingkungan belajar yang inklusif, inovatif, dan berpusat pada peserta didik, untuk mencetak generasi yang cerdas secara akademik dan memiliki karakter luhur sesuai Profil Pelajar Pancasila."
+                            </p>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+                                Misi ini diwujudkan melalui tiga pilar pengajaran utama:
+                            </p>
+                            <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                                <li style="position: relative; padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                                    <span style="position: absolute; left: 0; color: #ef4444; font-weight: bold;">•</span>
+                                    <strong style="color: var(--text-main);">Humanis & Inklusif:</strong> Menerapkan Sistem Among Ki Hadjar Dewantara untuk menumbuhkan kodrat alami siswa.
+                                </li>
+                                <li style="position: relative; padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                                    <span style="position: absolute; left: 0; color: #ef4444; font-weight: bold;">•</span>
+                                    <strong style="color: var(--text-main);">Link & Match Industri:</strong> Menyusun skenario pembelajaran relevan dengan budaya dan kebutuhan kerja industri teknik nyata.
+                                </li>
+                                <li style="position: relative; padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                                    <span style="position: absolute; left: 0; color: #ef4444; font-weight: bold;">•</span>
+                                    <strong style="color: var(--text-main);">Kreativitas & Proyek:</strong> Mengedepankan model pembelajaran berbasis tantangan dan proyek terapan.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Kompetensi Guru -->
+                    <div class="skill-card glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid var(--secondary-neon);">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                <i class="ph ph-cpu skill-icon" style="color: var(--secondary-neon); font-size: 3rem; margin-bottom: 0;"></i>
+                                <h3 style="font-family: var(--font-cyber); font-size: 1.35rem; margin: 0; line-height: 1.3;">Kompetensi Profesional</h3>
+                            </div>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                                Menguasai secara mendalam aspek keilmuan pedagogik abad ke-21 serta keahlian teknis pemesinan modern yang terintegrasi:
+                            </p>
+                            
+                            <!-- Sub-bagian 1: Pedagogik -->
+                            <h4 style="color: var(--text-main); font-size: 1rem; margin-bottom: 0.75rem; font-family: var(--font-cyber); display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="ph ph-chalkboard-teacher" style="color: var(--secondary-neon);"></i> Kompetensi Pedagogik & TPACK
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                                Mampu merancang pembelajaran berbasis TPACK (Technological Pedagogical Content Knowledge) dan menerapkan model inovatif seperti PBL dan PjBL secara kontekstual di kelas kejuruan.
+                            </p>
+
+                            <!-- Sub-bagian 2: Teknik -->
+                            <h4 style="color: var(--text-main); font-size: 1rem; margin-bottom: 0.75rem; font-family: var(--font-cyber); display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="ph ph-wrench" style="color: var(--secondary-neon);"></i> Keahlian Teknik & Kejuruan
+                            </h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+                                Memiliki penguasaan praktik kejuruan khusus berstandar industri manufaktur mesin:
+                            </p>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                                <span style="background: rgba(0, 229, 255, 0.1); color: var(--secondary-neon); padding: 0.35rem 0.75rem; border-radius: 4px; font-size: 0.75rem; border: 1px solid rgba(0, 229, 255, 0.25); font-weight: 600;">Teknik Pengelasan (Welding)</span>
+                                <span style="background: rgba(0, 229, 255, 0.1); color: var(--secondary-neon); padding: 0.35rem 0.75rem; border-radius: 4px; font-size: 0.75rem; border: 1px solid rgba(0, 229, 255, 0.25); font-weight: 600;">Manufaktur & Bubut</span>
+                                <span style="background: rgba(0, 229, 255, 0.1); color: var(--secondary-neon); padding: 0.35rem 0.75rem; border-radius: 4px; font-size: 0.75rem; border: 1px solid rgba(0, 229, 255, 0.25); font-weight: 600;">Desain CAD / 3D Modeling</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Karakter Guru -->
+                    <div class="skill-card glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid var(--accent);">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                <i class="ph ph-handshake skill-icon" style="color: var(--accent); font-size: 3rem; margin-bottom: 0;"></i>
+                                <h3 style="font-family: var(--font-cyber); font-size: 1.35rem; margin: 0; line-height: 1.3;">Karakter & Nilai Pendidik</h3>
+                            </div>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                                Pondasi moral dan etika kerja luhur untuk menumbuhkan kepercayaan siswa dan menciptakan teladan positif yang berlanjut:
+                            </p>
+                            <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 1rem;">
+                                <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                    <i class="ph ph-heart" style="color: var(--accent); font-size: 1.25rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: var(--text-main); font-size: 0.95rem; display: block; margin-bottom: 0.2rem;">Empati & Kepedulian</strong>
+                                        <span style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; display: block;">Mampu memahami kondisi psikososial siswa, merangkul perbedaan kemampuan, serta mendampingi dengan ketulusan hati.</span>
+                                    </div>
+                                </li>
+                                <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                    <i class="ph ph-arrows-counter-clockwise" style="color: var(--accent); font-size: 1.25rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: var(--text-main); font-size: 0.95rem; display: block; margin-bottom: 0.2rem;">Pembelajar Sepanjang Hayat</strong>
+                                        <span style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; display: block;">Memiliki growth mindset untuk terus berefleksi diri secara kritis, meningkatkan kompetensi diri, dan terbuka terhadap kemajuan IPTEK.</span>
+                                    </div>
+                                </li>
+                                <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                                    <i class="ph ph-shield-check" style="color: var(--accent); font-size: 1.25rem; margin-top: 0.2rem; flex-shrink: 0;"></i>
+                                    <div>
+                                        <strong style="color: var(--text-main); font-size: 0.95rem; display: block; margin-bottom: 0.2rem;">Integritas & Disiplin Industri</strong>
+                                        <span style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; display: block;">Memberikan keteladanan luhur (Ing Ngarsa Sung Tuladha) berupa dedikasi kerja tinggi, kejujuran, dan keselamatan kerja (K3).</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontak -->
+        <section id="kontak" class="section bg-secondary">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Hubungi Saya</h2>
+                    <div class="section-line"></div>
+                    <p style="margin-top: 1.5rem; color: var(--text-muted); max-width: 700px; margin-left: auto; margin-right: auto;">Mari berdiskusi lebih lanjut mengenai pendidikan, inovasi, atau kolaborasi.</p>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 2rem; max-width: 800px; margin: 0 auto;">
+                    <div class="glass-card" style="padding: 3rem; text-align: center; border-top: 4px solid var(--primary);">
+                        <i class="ph ph-envelope-simple" style="font-size: 4rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Email</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">fajarafri235@gmail.com</p>
+                        <a href="mailto:fajarafri235@gmail.com" class="btn btn-primary">Kirim Pesan</a>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                        <div class="glass-card" style="padding: 2rem; text-align: center;">
+                            <i class="ph ph-whatsapp-logo" style="font-size: 2.5rem; color: #10b981; margin-bottom: 1rem;"></i>
+                            <h4>WhatsApp</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">085842004081</p>
+                        </div>
+                        <div class="glass-card" style="padding: 2rem; text-align: center;">
+                            <i class="ph ph-map-pin" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                            <h4>Lokasi</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Bantul, D.I. Yogyakarta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <span class="logo-text">E-Portofolio<span>.</span></span>
+            </div>
+            <p class="copyright">&copy; <span id="year"></span> E-Portfolio Mahasiswa PPG. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- PDF Preview + Analysis Modal -->
+    <div id="pdf-preview-modal" style="display:none; position:fixed; inset:0; background:rgba(9,10,15,0.85); backdrop-filter:blur(12px); z-index:2000; padding:1.5rem; align-items:center; justify-content:center;">
+        <div style="max-width:1000px; width:100%; height:90vh; display:flex; flex-direction:column; gap:1rem;">
+            <!-- Modal Header -->
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-shrink:0;">
+                <h3 id="pdf-modal-title" style="margin:0; font-family:var(--font-cyber); color:var(--primary-neon); font-size:1.2rem; display:flex; align-items:center; gap:0.5rem; text-shadow:0 0 10px var(--primary-glow);">
+                    <i class="ph ph-file-pdf" style="font-size:1.5rem;"></i>
+                    <span>Dokumen</span>
+                </h3>
+                <div style="display:flex; align-items:center; gap:0.75rem;">
+                    <a id="pdf-open-btn" href="" target="_blank" class="btn btn-outline btn-sm" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.5rem 1rem; font-size:0.85rem; border-color:var(--secondary-neon); color:var(--secondary-neon); text-transform:none; letter-spacing:0.5px; border-radius:4px; box-shadow:none;">
+                        <i class="ph ph-arrow-square-out"></i> Buka Penuh
+                    </a>
+                    <a id="pdf-download-btn" href="" download class="btn btn-primary btn-sm" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.5rem 1rem; font-size:0.85rem; text-transform:none; letter-spacing:0.5px; border-radius:4px; box-shadow:none;">
+                        <i class="ph ph-download-simple"></i> Unduh
+                    </a>
+                    <button id="pdf-modal-close" style="background:rgba(255,255,255,0.05); border:1px solid var(--border-color); color:var(--text-main); width:36px; height:36px; border-radius:8px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; font-size:1.1rem;" onmouseover="this.style.background='rgba(239,68,68,0.2)'; this.style.borderColor='#ef4444'; this.style.color='#ef4444';" onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.borderColor='var(--border-color)'; this.style.color='var(--text-main)';">
+                        <i class="ph ph-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PDF Preview Area -->
+            <div class="glass-card" style="flex:1; min-height:0; padding:0; overflow:hidden; border:1px solid var(--border-color); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+                <iframe id="pdf-iframe" src="" style="width:100%; height:100%; border:none; background:#090a0f;"></iframe>
+            </div>
+
+            <!-- Analysis Section (collapsible) -->
+            <div class="glass-card" style="flex-shrink:0; padding:1.25rem; border:1px solid var(--border-color); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+                <div id="analysis-toggle" style="display:flex; align-items:center; justify-content:space-between; cursor:pointer; user-select:none;" onclick="toggleAnalysisPanel()">
+                    <h4 style="margin:0; color:var(--text-main); font-size:0.95rem; display:flex; align-items:center; gap:0.5rem; font-family:var(--font-cyber);">
+                        <i class="ph ph-note-pencil" style="color:var(--secondary-neon); font-size:1.2rem;"></i>
+                        Analisis Artefak
+                    </h4>
+                    <i id="analysis-chevron" class="ph ph-caret-down" style="color:var(--text-muted); transition:transform 0.3s ease; font-size:1.2rem;"></i>
+                </div>
+                <div id="analysis-panel" style="max-height:0; overflow:hidden; transition:max-height 0.4s ease;">
+                    <textarea id="pdf-analysis-text" rows="5" readonly style="width:100%; margin-top:1rem; padding:0.75rem; border:1px solid var(--border-color); border-radius:8px; background:rgba(255,255,255,0.03); color:var(--text-main); font-family:var(--font-sans); font-size:0.9rem; resize:vertical; outline:none; transition:border-color 0.3s ease; cursor:default; line-height:1.6;" placeholder="Belum ada analisis untuk dokumen ini."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analysis-only Modal (for non-PDF artefacts) -->
+    <div id="analysis-modal" class="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(5px); align-items:center; justify-content:center; z-index:1000;">
+        <div class="glass-card" style="padding:2rem; max-width:500px; width:90%;">
+            <h3 id="modal-title" style="margin-top:0;">Analisis Artefak</h3>
+            <textarea id="analysis-text" rows="6" readonly style="width:100%; margin-top:1rem; padding:0.5rem; border:1px solid var(--border-color); background:rgba(255,255,255,0.05); color:var(--text-main); cursor:default;" placeholder="Belum ada analisis."></textarea>
+            <div style="margin-top:1rem; text-align:right;">
+                <button id="close-modal" class="btn btn-outline" style="margin-right:0.5rem;">Tutup</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
