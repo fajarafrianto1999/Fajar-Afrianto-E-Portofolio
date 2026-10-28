@@ -50,6 +50,10 @@ html {
 body {
     font-family: var(--font-sans);
     background-color: var(--bg-dark);
+    background-image: linear-gradient(rgba(2, 6, 23, 0.55), rgba(2, 6, 23, 0.8)), url('../assets/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
@@ -326,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     padding-top: 80px;
-    background-image: linear-gradient(rgba(9, 10, 15, 0.85), rgba(9, 10, 15, 0.85)), url('assets/welding_bg.png');
+    background-image: none; /* background foto global dipasang di body */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -847,7 +851,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer {
     padding: 2rem 0;
     border-top: 1px solid var(--border-color);
-    background: var(--bg-dark);
+    background: rgba(9, 10, 15, 0.7);
 }
 
 .footer-container {
