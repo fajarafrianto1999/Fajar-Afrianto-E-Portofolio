@@ -18,10 +18,14 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            align-items: flex-start;
+            background:
+                linear-gradient(rgba(2, 6, 23, 0.45), rgba(2, 6, 23, 0.75)),
+                url('assets/bg.png') center / cover no-repeat fixed;
+            background-color: #020617;
             color: #ffffff;
-            overflow: hidden;
+            overflow-x: hidden;
+            padding: 4rem 1rem;
         }
 
         .container {
@@ -169,6 +173,19 @@
             border-radius: 50%;
         }
 
+        .semester-title {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: left;
+            padding-left: 1rem;
+            border-left: 4px solid #8b5cf6;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -191,6 +208,7 @@
         <h1>Selamat Datang</h1>
         <p class="subtitle">Silakan pilih portofolio yang ingin Anda lihat</p>
 
+        <h2 class="semester-title">Semester 1</h2>
         <div class="cards-container">
             <!-- Portofolio 1 -->
             <a href="E-Portofolio 1/index.html" class="card">
@@ -206,6 +224,25 @@
                 <h2>Portofolio 2</h2>
                 <p>Lihat lebih banyak proyek dan karya desain pada Portofolio kedua.</p>
                 <div class="card-btn">Buka Porto 2</div>
+            </a>
+        </div>
+
+        <h2 class="semester-title">Semester 2</h2>
+        <div class="cards-container">
+            <!-- Seminar PPG -->
+            <a href="Seminar PPG/index.html" class="card">
+                <div class="card-icon">🎓</div>
+                <h2>Seminar PPG</h2>
+                <p>Materi, laporan, dan dokumentasi kegiatan Seminar PPG.</p>
+                <div class="card-btn">Buka Seminar</div>
+            </a>
+
+            <!-- PPL Mandiri -->
+            <a href="PPL Mandiri/index.html" class="card">
+                <div class="card-icon">🏫</div>
+                <h2>PPL Mandiri</h2>
+                <p>Dokumentasi dan perangkat Praktik Pengalaman Lapangan Mandiri di sekolah mitra.</p>
+                <div class="card-btn">Buka PPL Mandiri</div>
             </a>
         </div>
     </div>

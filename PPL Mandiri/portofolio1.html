@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio 1 - PPL Mandiri</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(2, 6, 23, 0.45), rgba(2, 6, 23, 0.75)),
+                url('../assets/bg.png') center / cover no-repeat fixed;
+            background-color: #020617;
+            color: #ffffff;
+            overflow-x: hidden;
+            padding: 4rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .item-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .item-head {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .item-num {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .item-icon {
+            font-size: 2rem;
+        }
+
+        .item-card h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 0.8rem;
+        }
+
+        .item-card p {
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.3rem;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+            transform: scale(1.05);
+        }
+
+        .btn.disabled {
+            background: rgba(255, 255, 255, 0.08);
+            color: #64748b;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        .btn.disabled:hover {
+            transform: none;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(6px);
+            padding: 2rem;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .modal-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Decorative background elements */
+        .blob {
+            position: fixed;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+
+        .blob-1 {
+            top: -10%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: #3b82f6;
+        }
+
+        .blob-2 {
+            bottom: -10%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: #8b5cf6;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .modal {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Kembali ke PPL Mandiri</a>
+
+        <h1>Portofolio 1</h1>
+        <p class="subtitle">Praktik Pengalaman Lapangan Mandiri &mdash; Analisis Praktik Mengajar</p>
+
+        <div class="grid">
+            <!-- 1. Analisis Perencanaan -->
+            <div class="item-card">
+                <div class="item-head">
+                    <div class="item-num">1</div>
+                    <div class="item-icon">🗂️</div>
+                </div>
+                <h2>Analisis Produk Rancangan/Perencanaan Pembelajaran</h2>
+                <p>Analisis produk rancangan/perencanaan pembelajaran untuk praktik mengajar mandiri.</p>
+                <div class="item-actions">
+                    <!-- Isi data-src dengan link Google Drive (format /preview) agar tombol aktif -->
+                    <button class="btn disabled" data-src="">Lihat Berkas 📄</button>
+                </div>
+            </div>
+
+            <!-- 2. Analisis Materi -->
+            <div class="item-card">
+                <div class="item-head">
+                    <div class="item-num">2</div>
+                    <div class="item-icon">📚</div>
+                </div>
+                <h2>Analisis Materi Pembelajaran</h2>
+                <p>Analisis materi pembelajaran yang sudah disusun dan diterapkan dalam praktik mengajar mandiri.</p>
+                <div class="item-actions">
+                    <button class="btn disabled" data-src="">Lihat Berkas 📄</button>
+                </div>
+            </div>
+
+            <!-- 3. Analisis Media -->
+            <div class="item-card">
+                <div class="item-head">
+                    <div class="item-num">3</div>
+                    <div class="item-icon">🖥️</div>
+                </div>
+                <h2>Analisis Media Pembelajaran</h2>
+                <p>Analisis media pembelajaran yang dipergunakan dalam praktik mengajar mandiri.</p>
+                <div class="item-actions">
+                    <button class="btn disabled" data-src="">Lihat Berkas 📄</button>
+                </div>
+            </div>
+
+            <!-- 4. Analisis Video -->
+            <div class="item-card">
+                <div class="item-head">
+                    <div class="item-num">4</div>
+                    <div class="item-icon">🎬</div>
+                </div>
+                <h2>Analisis Video Pelaksanaan Praktik Mengajar</h2>
+                <p>Analisis video pelaksanaan praktik mengajar mandiri.</p>
+                <div class="item-actions">
+                    <button class="btn disabled" data-src="">Lihat Berkas 📄</button>
+                </div>
+            </div>
+
+            <!-- 5. Analisis Nonmengajar -->
+            <div class="item-card">
+                <div class="item-head">
+                    <div class="item-num">5</div>
+                    <div class="item-icon">🤝</div>
+                </div>
+                <h2>Analisis Kegiatan Nonmengajar</h2>
+                <p>Analisis kegiatan nonmengajar yang dilaksanakan selama praktik di sekolah mitra.</p>
+                <div class="item-actions">
+                    <button class="btn disabled" data-src="">Lihat Berkas 📄</button>
+                </div>
+            </div>
+
+            <!-- 6. Instrumen Penilaian -->
+            <div class="item-card">
+                <div class="item-head">
+                    <div class="item-num">6</div>
+                    <div class="item-icon">📊</div>
+                </div>
+                <h2>Instrumen Penilaian beserta Analisisnya</h2>
+                <p>Instrumen penilaian yang dirancang beserta analisisnya.</p>
+                <div class="item-actions">
+                    <button class="btn disabled" data-src="">Lihat Berkas 📄</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Document Modal -->
+    <div id="docModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <iframe id="docIframe" src="" allow="autoplay"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Buttons with a data-src link open the document preview modal.
+        document.querySelectorAll('.btn[data-src]').forEach(btn => {
+            const src = btn.getAttribute('data-src');
+            if (src) {
+                btn.classList.remove('disabled');
+                btn.addEventListener('click', () => openModal(src));
+            } else {
+                btn.title = 'Berkas belum tersedia';
+            }
+        });
+
+        function openModal(url) {
+            document.getElementById('docIframe').src = url;
+            document.getElementById('docModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('docIframe').src = '';
+            document.getElementById('docModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('click', e => {
+            if (e.target.id === 'docModal') closeModal();
+        });
+    </script>
+</body>
+</html>
