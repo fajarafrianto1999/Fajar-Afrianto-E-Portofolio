@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAS - PPL Mandiri</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(2, 6, 23, 0.45), rgba(2, 6, 23, 0.75)),
+                url('../assets/bg.png') center / cover no-repeat fixed;
+            background-color: #020617;
+            color: #ffffff;
+            overflow-x: hidden;
+            padding: 4rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .back-link {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.6rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        /* Enhanced Cyber Glassmorphism Card */
+        .item-card {
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .item-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            opacity: 0.6;
+            transition: opacity 0.3s ease, height 0.3s ease;
+        }
+
+        .item-card:hover {
+            transform: translateY(-8px);
+            background: rgba(15, 23, 42, 0.85);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(56, 189, 248, 0.16);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        .item-card:hover::before {
+            opacity: 1;
+            height: 4px;
+        }
+
+        .card-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.2rem;
+        }
+
+        .item-head {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .item-num {
+            font-family: 'Outfit', sans-serif;
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #38bdf8, #6366f1);
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+            color: #ffffff;
+        }
+
+        .item-icon {
+            font-size: 1.9rem;
+            line-height: 1;
+        }
+
+        .card-badge {
+            font-family: 'Outfit', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            color: #38bdf8;
+            box-shadow: 0 2px 10px rgba(56, 189, 248, 0.15);
+        }
+
+        .card-badge.rose {
+            background: rgba(244, 63, 94, 0.12);
+            border-color: rgba(244, 63, 94, 0.35);
+            color: #fb7185;
+            box-shadow: 0 2px 10px rgba(244, 63, 94, 0.15);
+        }
+
+        .item-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 0.6rem;
+            color: #ffffff;
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.2px;
+        }
+
+        .item-card p.card-desc {
+            font-size: 0.94rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            min-height: 48px;
+        }
+
+        /* Card Visual Preview Box */
+        .card-preview-box {
+            width: 100%;
+            height: 154px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(2, 6, 23, 0.6);
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1.2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+
+        .card-preview-box:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+        }
+
+        .card-preview-box img {
+            transition: transform 0.4s ease;
+        }
+
+        .card-preview-box:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Preview Chips */
+        .mini-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .mini-chip:hover, .mini-chip.active {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: #38bdf8;
+            color: #ffffff;
+        }
+
+        .chip-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            font-size: 0.7rem;
+            font-weight: 800;
+        }
+
+        .preview-hover-hint {
+            margin-top: auto;
+            padding-top: 4px;
+            font-size: 0.74rem;
+            color: #94a3b8;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 4px;
+            transition: color 0.2s ease;
+        }
+
+        .card-preview-box:hover .preview-hover-hint {
+            color: #38bdf8;
+        }
+
+        /* Metadata Tags */
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 1.3rem;
+            margin-top: auto;
+        }
+
+        .tag-pill {
+            font-size: 0.76rem;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .item-actions {
+            width: 100%;
+        }
+
+        .btn {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 0.85rem 1.4rem;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.94rem;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.35);
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            box-shadow: 0 6px 22px rgba(59, 130, 246, 0.55);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-youtube {
+            background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4) !important;
+        }
+
+        .btn-youtube:hover {
+            background: linear-gradient(135deg, #f87171, #ef4444) !important;
+            box-shadow: 0 6px 22px rgba(239, 68, 68, 0.6) !important;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(2, 6, 23, 0.88);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 1050px;
+            height: 92vh;
+            margin: 0 auto;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+        }
+
+        .modal-header-bar h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal-close-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+            background: rgba(239, 68, 68, 0.3);
+            border-color: #ef4444;
+            color: #ffffff;
+            transform: scale(1.08);
+        }
+
+        /* RPP Selector Layout */
+        .rpp-layout {
+            display: flex;
+            height: calc(100% - 60px);
+            overflow: hidden;
+        }
+
+        .rpp-sidebar {
+            width: 290px;
+            background: rgba(2, 6, 23, 0.75);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.2rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .rpp-tab-item {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.9rem 1rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: #cbd5e1;
+            font-size: 0.92rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: left;
+            width: 100%;
+        }
+
+        .rpp-tab-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateX(4px);
+        }
+
+        .rpp-tab-item.active {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.25));
+            border-color: #38bdf8;
+            color: #ffffff;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .rpp-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .rpp-tab-item.active .rpp-badge {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .rpp-viewer {
+            flex-grow: 1;
+            height: 100%;
+            background: #020617;
+            position: relative;
+        }
+
+        .rpp-viewer iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Decorative blobs */
+        .blob {
+            position: fixed;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+
+        .blob-1 {
+            top: -10%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: #3b82f6;
+        }
+
+        .blob-2 {
+            bottom: -10%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: #8b5cf6;
+        }
+
+        @media (max-width: 820px) {
+            .rpp-layout {
+                flex-direction: column;
+            }
+            .rpp-sidebar {
+                width: 100%;
+                max-height: 160px;
+                flex-direction: row;
+                overflow-x: auto;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            .rpp-tab-item {
+                white-space: nowrap;
+                min-width: 190px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .modal {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Kembali ke PPL Mandiri</a>
+
+        <h1>UAS PPL Mandiri</h1>
+        <p class="subtitle">Ujian Akhir Semester &mdash; Praktik Pengalaman Lapangan Mandiri</p>
+
+        <div class="grid">
+            <!-- 1. Produk Rancangan/Perencanaan Pembelajaran Lengkap Terbaik (Siklus 2 s.d. 4) -->
+            <div class="item-card">
+                <div class="card-top-bar">
+                    <div class="item-head">
+                        <div class="item-num">1</div>
+                        <div class="item-icon">📑</div>
+                    </div>
+                    <span class="card-badge">🌟 Produk Terbaik Siklus 2–4</span>
+                </div>
+                <h2>Rancangan Pembelajaran Terbaik (Siklus 2–4)</h2>
+                <p class="card-desc">Produk rancangan/perencanaan pembelajaran (RPP) lengkap yang terbaik dari praktik mengajar mandiri siklus 2 s.d. 4 pada konsentrasi keahlian Teknik Pemesinan.</p>
+
+                <!-- Interactive Multi-Cycle Deck Preview (Siklus 2, 3, 4) -->
+                <div onclick="openUasRppModal()" class="card-preview-box" title="Klik untuk membuka modul RPP Siklus 2 s.d. 4">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 14px; background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.74rem;">
+                        <span style="color: #cbd5e1; font-weight: 600;">📑 Pilihan Siklus 2 s.d. 4</span>
+                        <span style="color: #38bdf8; font-weight: 700; font-size: 0.7rem;">PPL Mandiri</span>
+                    </div>
+                    <div style="padding: 10px 14px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1; justify-content: center;">
+                        <div class="mini-chip active">
+                            <span class="chip-num">S2</span>
+                            <span>RPP Siklus 2 (Pertemuan 4 & 5)</span>
+                        </div>
+                        <div class="mini-chip">
+                            <span class="chip-num">S3</span>
+                            <span>RPP Siklus 3 (Pertemuan 6)</span>
+                        </div>
+                        <div class="mini-chip">
+                            <span class="chip-num">S4</span>
+                            <span>RPP Siklus 4 (Pertemuan 7 & 8)</span>
+                        </div>
+                    </div>
+                    <div style="padding: 0 14px 8px;" class="preview-hover-hint">Buka Navigasi RPP (S2–S4) ↗</div>
+                </div>
+
+                <div class="card-tags">
+                    <span class="tag-pill">📑 Modul Ajar Siklus 2–4</span>
+                    <span class="tag-pill">⚙️ Teknik Pemesinan</span>
+                    <span class="tag-pill">🌟 Produk Terbaik</span>
+                    <span class="tag-pill">📄 3 Berkas Lengkap</span>
+                </div>
+
+                <div class="item-actions">
+                    <button class="btn" onclick="openUasRppModal()">Buka Dokumen Perencanaan (S2–S4) 📄 ↗</button>
+                </div>
+            </div>
+
+            <!-- 2. Produk Video Pelaksanaan Praktik Mengajar Mandiri -->
+            <div class="item-card">
+                <div class="card-top-bar">
+                    <div class="item-head">
+                        <div class="item-num">2</div>
+                        <div class="item-icon">🎬</div>
+                    </div>
+                    <span class="card-badge rose">🎬 1080p Full HD</span>
+                </div>
+                <h2>Video Pelaksanaan Praktik Mengajar Mandiri</h2>
+                <p class="card-desc">Produk video rekaman pelaksanaan praktik mengajar mandiri di kelas dan bengkel pemesinan berdasarkan rancangan pembelajaran yang dipilih.</p>
+
+                <!-- YouTube High-Res Video Preview -->
+                <a href="https://youtu.be/4j99a28rtfI" target="_blank" class="card-preview-box" title="Tonton Video Mengajar di YouTube" style="text-decoration: none; position: relative;">
+                    <img src="assets/uas_video_thumb.jpg" alt="Video mengajar PPL Mandiri 2 PPG UST 2026" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.7)); display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 52px; height: 52px; border-radius: 50%; background: #ef4444; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 22px rgba(239, 68, 68, 0.7); transition: transform 0.3s ease;">
+                            <span style="color: white; font-size: 1.5rem; margin-left: 3px;">▶</span>
+                        </div>
+                    </div>
+                    <div style="position: absolute; bottom: 8px; left: 12px; right: 12px; color: #ffffff; font-size: 0.8rem; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.8); display: flex; justify-content: space-between; align-items: center;">
+                        <span>Video Mengajar PPL Mandiri 2</span>
+                        <span style="background: rgba(0,0,0,0.75); padding: 2px 8px; border-radius: 5px; font-size: 0.72rem; border: 1px solid rgba(255,255,255,0.15);">YouTube ↗</span>
+                    </div>
+                </a>
+
+                <div class="card-tags">
+                    <span class="tag-pill">🎥 Praktik Mengajar 2</span>
+                    <span class="tag-pill">⏱️ Video Pelaksanaan</span>
+                    <span class="tag-pill">⚙️ Bengkel Bubut</span>
+                    <span class="tag-pill">▶️ 1080p HD</span>
+                </div>
+
+                <div class="item-actions">
+                    <a href="https://youtu.be/4j99a28rtfI" target="_blank" class="btn btn-youtube">Tonton Video di YouTube 🎥 ↗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RPP Dedicated Multi-Cycle Viewer Modal for UAS (Siklus 2, 3, 4) -->
+    <div id="rppModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header-bar">
+                <h3 id="rppModalTitle">📑 RPP PPL Mandiri — Siklus 2</h3>
+                <div class="modal-header-actions">
+                    <button class="modal-close-btn" onclick="closeUasRppModal()" title="Tutup">&times;</button>
+                </div>
+            </div>
+            <div class="rpp-layout">
+                <!-- Sidebar Navigasi Siklus -->
+                <div class="rpp-sidebar">
+                    <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; margin-bottom: 0.4rem; padding-left: 0.5rem; font-weight: 700;">
+                        Pilihan Siklus UAS
+                    </div>
+                    <button class="rpp-tab-item active" onclick="switchUasRpp('1D9-4l-ISVDvzOPI7E4WV2PtaYyOloVRy', 'RPP PPL Mandiri — Siklus 2', this)">
+                        <span class="rpp-badge">S2</span>
+                        <div>
+                            <div style="font-weight: 600;">Siklus 2</div>
+                            <div style="font-size: 0.75rem; color: #94a3b8;">RPP Praktik Mandiri</div>
+                        </div>
+                    </button>
+                    <button class="rpp-tab-item" onclick="switchUasRpp('1F3agaj1D4X5O8r4BEHffKsPmApffVSVU', 'RPP PPL Mandiri — Siklus 3', this)">
+                        <span class="rpp-badge">S3</span>
+                        <div>
+                            <div style="font-weight: 600;">Siklus 3</div>
+                            <div style="font-size: 0.75rem; color: #94a3b8;">RPP Praktik Mandiri</div>
+                        </div>
+                    </button>
+                    <button class="rpp-tab-item" onclick="switchUasRpp('1EgR4PwLbyokCTQh-kumGurKiLtlrgFdT', 'RPP PPL Mandiri — Siklus 4', this)">
+                        <span class="rpp-badge">S4</span>
+                        <div>
+                            <div style="font-weight: 600;">Siklus 4</div>
+                            <div style="font-size: 0.75rem; color: #94a3b8;">RPP Praktik Mandiri</div>
+                        </div>
+                    </button>
+                </div>
+                <!-- Area Pratinjau Dokumen PDF -->
+                <div class="rpp-viewer">
+                    <iframe id="rppIframe" src="" allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openUasRppModal() {
+            const modal = document.getElementById('rppModal');
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            const iframe = document.getElementById('rppIframe');
+            if (!iframe.src || iframe.src === 'about:blank') {
+                iframe.src = 'https://drive.google.com/file/d/1D9-4l-ISVDvzOPI7E4WV2PtaYyOloVRy/preview';
+            }
+        }
+
+        function closeUasRppModal() {
+            document.getElementById('rppModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function switchUasRpp(fileId, title, btn) {
+            document.querySelectorAll('.rpp-tab-item').forEach(el => el.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            document.getElementById('rppModalTitle').innerText = '📑 ' + title;
+            document.getElementById('rppIframe').src = 'https://drive.google.com/file/d/' + fileId + '/preview';
+        }
+
+        window.addEventListener('click', e => {
+            if (e.target.id === 'rppModal') closeUasRppModal();
+        });
+    </script>
+</body>
+</html>
