@@ -365,30 +365,36 @@ p {
 
 .neon-ring {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 215px;
     margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.45));
 }
 
+/* Outer Hexagon Glow Pulse */
 .neon-ring::before {
     content: '';
     position: absolute;
-    inset: -5px;
-    border-radius: 50%;
-    background: conic-gradient(from 0deg, #3b82f6, #8b5cf6, #10b981, #3b82f6);
-    animation: rotateBorder 5s linear infinite;
+    inset: -6px;
+    background: conic-gradient(from 0deg, #38bdf8, #818cf8, #3b82f6, #06b6d4, #38bdf8);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: rotateBorder 6s linear infinite;
     z-index: 0;
 }
 
+/* Ambient Blur Behind Hexagon */
 .neon-ring::after {
     content: '';
     position: absolute;
-    inset: -5px;
-    border-radius: 50%;
-    background: conic-gradient(from 0deg, #3b82f6, #8b5cf6, #10b981, #3b82f6);
-    filter: blur(15px);
-    animation: rotateBorder 5s linear infinite;
-    opacity: 0.5;
+    inset: -10px;
+    background: conic-gradient(from 0deg, #38bdf8, #818cf8, #3b82f6, #38bdf8);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    filter: blur(14px);
+    opacity: 0.6;
+    animation: rotateBorder 6s linear infinite;
     z-index: 0;
 }
 
@@ -396,16 +402,22 @@ p {
     to { transform: rotate(360deg); }
 }
 
+/* Inner Hexagon Frame for Photo */
 .neon-avatar {
     position: relative;
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
+    width: 176px;
+    height: 200px;
     object-fit: cover;
-    border: 5px solid #0f172a;
+    object-position: center top;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     z-index: 1;
     display: block;
-    margin: 5px auto 0;
+    background: #0f172a;
+    transition: transform 0.4s ease;
+}
+
+.neon-ring:hover .neon-avatar {
+    transform: scale(1.03);
 }
 
 .neon-name {
